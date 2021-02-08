@@ -20,7 +20,16 @@ class GridSingleItem extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: 70,
           margin: EdgeInsets.all(10),
-          child: Center(child:Text(title)),
+          child: Row(
+
+            children: [
+              Image.network(imgUrl),
+              SizedBox(
+                width: 30,
+              ),
+              Center(child:Text(title)),
+            ],
+          ),
         ),
       ),
     );
