@@ -1,9 +1,13 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:search_widget/search_widget.dart';
 import 'package:shopping_app/items/category_list_single_item.dart';
-import 'package:shopping_app/models/dummy_categories.dart';
+import 'package:shopping_app/items/data_search.dart';
+import 'package:shopping_app/models/dummy_data.dart';
 
 class HomeScreen extends StatelessWidget {
+  final categoriesList = DUMMY_CATEGORIES.toList();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,7 +15,9 @@ class HomeScreen extends StatelessWidget {
         title: Text("Categories"),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showSearch(context: context, delegate: DataSearch());
+            },
             icon: Icon(Icons.search),
           )
         ],
@@ -60,7 +66,6 @@ class HomeScreen extends StatelessWidget {
                   .map((catData) =>
                       GridSingleItem(catData.title, catData.imgUrl))
                   .toList(),
-              // itemCount: DUMMY_CATEGORIES.toList().length,
               shrinkWrap: true,
             ),
           ),

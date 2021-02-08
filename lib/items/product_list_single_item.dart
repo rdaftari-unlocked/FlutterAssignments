@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/screens/product_full_details.dart';
-import 'package:shopping_app/screens/product_list.dart';
 
 class ProductSingleList extends StatelessWidget {
+  final String productId;
   final String title;
   final String imgUrl;
-
-  ProductSingleList(this.title, this.imgUrl);
+  ProductSingleList(this.productId, this.title, this.imgUrl);
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      key: ValueKey(productId),
       onTap: () {
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => ProductFullDetails()));
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => ProductFullDetails(productId)));
       },
       child: Card(
         shape: RoundedRectangleBorder(

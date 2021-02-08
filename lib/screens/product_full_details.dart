@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:provider/provider.dart';
+import 'package:shopping_app/providers/product_provider.dart';
 
 class ProductFullDetails extends StatelessWidget {
+  final String productId;
+  ProductFullDetails(this.productId);
+
   @override
   Widget build(BuildContext context) {
+    final loadedProduct = Provider.of<ProductProvider>(context);
+    final singleProduct =
+        loadedProduct.items.firstWhere((element) => element.id == productId);
     return Scaffold(
       body: Container(
         child: Column(
@@ -11,6 +19,7 @@ class ProductFullDetails extends StatelessWidget {
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.5,
+              child: Image(image: NetworkImage(singleProduct.image)),
               color: Colors.green,
             ),
             SingleChildScrollView(
@@ -24,7 +33,7 @@ class ProductFullDetails extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            "Nike Shoes",
+                            singleProduct.title,
                             style: TextStyle(
                                 fontSize: 25, fontWeight: FontWeight.bold),
                           ),
@@ -61,9 +70,10 @@ class ProductFullDetails extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
+                            height: 100,
                             width: MediaQuery.of(context).size.width - 50,
                             child: Text(
-                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+                              singleProduct.description,
                               style: TextStyle(fontSize: 17),
                             ),
                           ),
@@ -76,7 +86,7 @@ class ProductFullDetails extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            "100\$",
+                            "${singleProduct.price}\$",
                             style: TextStyle(
                                 fontSize: 25, fontWeight: FontWeight.bold),
                           ),

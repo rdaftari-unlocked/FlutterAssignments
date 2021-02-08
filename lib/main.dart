@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:shopping_app/providers/product_provider.dart';
 import 'package:shopping_app/screens/home_screen.dart';
 
 void main() {
@@ -13,13 +15,16 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return ChangeNotifierProvider(
+      create: (ctx) => ProductProvider(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+            primarySwatch: Colors.purple,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+            fontFamily: 'Poppins'),
+        home: HomeScreen(),
       ),
-      home: HomeScreen(),
     );
   }
 }
