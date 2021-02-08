@@ -47,7 +47,7 @@ class DataSearch extends SearchDelegate<String> {
     return ListView.builder(
         itemCount: DUMMY_CATEGORIES.length,
         itemBuilder: (context, index) => ListTile(
-              leading: Icon(Icons.ac_unit),
+              leading: DUMMY_CATEGORIES[index].icon,
               title: Text(DUMMY_CATEGORIES[index].title),
               onTap: () {
                 query = DUMMY_CATEGORIES[index].title;

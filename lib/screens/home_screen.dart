@@ -1,7 +1,4 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:search_widget/search_widget.dart';
 import 'package:shopping_app/items/category_list_single_item.dart';
 import 'package:shopping_app/items/data_search.dart';
 import 'package:shopping_app/models/dummy_data.dart';
