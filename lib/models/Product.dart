@@ -1,4 +1,4 @@
-class Product{
+class Product {
   final String id;
   final String title;
   final int price;
@@ -6,7 +6,11 @@ class Product{
   final List<String> category;
   final String image;
 
-  const Product({this.id, this.title, this.price, this.description, this.category,
+  const Product(
+      {this.id,
+      this.title,
+      this.price,
+      this.description,
+      this.category,
       this.image});
-
 }
