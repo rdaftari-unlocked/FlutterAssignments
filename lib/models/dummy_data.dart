@@ -7,7 +7,7 @@ const DUMMY_CATEGORIES = const [
       id: 'c1',
       title: 'Electronics',
       imgUrl:
-          "https://as1.ftcdn.net/jpg/02/58/92/94/500_F_258929407_AHya3I8JQJvFEDrucAI3173HVp8CP59P.jpg",
+          "https://png.pngtree.com/png-vector/20190214/ourlarge/pngtree-mobile-electronics-icon-png-image_428202.jpg",
       icon: Icon(FontAwesome.mobile_phone)),
   Category(
       id: 'c2',

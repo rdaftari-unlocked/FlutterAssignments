@@ -18,7 +18,10 @@ class ProductFullDetails extends StatelessWidget {
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.5,
-              child: Image(image: NetworkImage(singleProduct.image)),
+              child: Image(
+                image: NetworkImage(singleProduct.image),
+                fit: BoxFit.cover,
+              ),
               color: Colors.green,
             ),
             SingleChildScrollView(
@@ -112,19 +115,13 @@ class ProductFullDetails extends StatelessWidget {
                             avatar: CircleAvatar(
                               backgroundColor: Colors.grey.shade800,
                             ),
-                            label: Text('Shoes'),
+                            label: Text(singleProduct.category[0]),
                           ),
                           Chip(
                             avatar: CircleAvatar(
                               backgroundColor: Colors.grey.shade800,
                             ),
-                            label: Text('Shoes'),
-                          ),
-                          Chip(
-                            avatar: CircleAvatar(
-                              backgroundColor: Colors.grey.shade800,
-                            ),
-                            label: Text('Shoes'),
+                            label: Text(singleProduct.category[1]),
                           )
                         ],
                       ),
@@ -137,7 +134,7 @@ class ProductFullDetails extends StatelessWidget {
                           children: [
                             Container(
                               height: 60,
-                              color: Colors.green,
+                              color: Colors.yellow,
                               child: FlatButton(
                                 onPressed: () {},
                                 child: Row(
@@ -155,7 +152,7 @@ class ProductFullDetails extends StatelessWidget {
                             ),
                             Container(
                               height: 60,
-                              color: Colors.blueAccent,
+                              color: Colors.black,
                               child: FlatButton(
                                 onPressed: () {},
                                 child: Row(
@@ -163,9 +160,15 @@ class ProductFullDetails extends StatelessWidget {
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.all(8.0),
-                                      child: Icon(Icons.show_chart),
+                                      child: Icon(
+                                        Icons.show_chart,
+                                        color: Colors.white,
+                                      ),
                                     ),
-                                    Text("BUY NOW")
+                                    Text(
+                                      "BUY NOW",
+                                      style: TextStyle(color: Colors.white),
+                                    )
                                   ],
                                 ),
                               ),

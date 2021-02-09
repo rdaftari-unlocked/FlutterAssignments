@@ -15,10 +15,11 @@ class GridSingleItem extends StatelessWidget {
                 )));
       },
       child: Card(
+        elevation: 10,
         margin: EdgeInsets.all(10),
         child: Container(
           width: MediaQuery.of(context).size.width,
-          height: 70,
+          height: 150,
           margin: EdgeInsets.all(10),
           child: Row(
             children: [
@@ -26,7 +27,11 @@ class GridSingleItem extends StatelessWidget {
               SizedBox(
                 width: 30,
               ),
-              Center(child: Text(title)),
+              Center(
+                  child: Text(
+                title,
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+              )),
             ],
           ),
         ),

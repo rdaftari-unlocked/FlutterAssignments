@@ -48,8 +48,7 @@ class ProductProvider with ChangeNotifier {
       description:
           "Cum omnia favere, omnes mensaes contactus fatalis, brevis hilotaees. Lactea talis lacta est?",
       category: ["Jewelery", "Women Clothing"],
-      image:
-          "https://rukminim1.flixcart.com/image/530/636/jpcxrww0/jewellery-set/n/b/s/m4081fl-etnico-original-imaez9phhvhvnm73.jpeg?q=50",
+      image: "https://t2conline.com/wp-content/uploads/2019/04/melorra.jpg",
     ),
     Product(
       id: "p6",
@@ -85,7 +84,8 @@ class ProductProvider with ChangeNotifier {
       id: "p9",
       title: "ROG Strix",
       price: 999,
-      description: "",
+      description:
+          "Enjoy video content in superb contrast and high resolution as this phone packs the Super Retina XDR Display.Ceramic Shield, on the other hand, makes for up drop performance that’s better by up to 4 times",
       category: ["Electronics", "Computer Appliances"],
       image:
           "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201907/Asus_ROG_Strix_Scar_3__1_.jpeg?eK6WCsceKP9C5I3TLg9zUuGTg3fafxdP&size=1200:675",

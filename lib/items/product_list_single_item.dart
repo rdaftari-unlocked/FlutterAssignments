@@ -24,6 +24,7 @@ class ProductSingleList extends StatelessWidget {
         ),
         margin: EdgeInsets.all(10),
         child: Container(
+          height: 200,
           decoration: BoxDecoration(
               color: Colors.black.withAlpha(200),
               borderRadius: BorderRadius.only(
@@ -36,17 +37,13 @@ class ProductSingleList extends StatelessWidget {
                       Colors.black.withOpacity(0.2), BlendMode.dstATop),
                   fit: BoxFit.cover,
                   image: NetworkImage(imgUrl))),
-          child: Column(
-            children: [
-              Container(
-                height: 100,
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              Center(child: Text(title)),
-            ],
-          ),
+          child: Center(
+              child: Text(
+            title,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.w700, fontSize: 20),
+          )),
         ),
       ),
     );
