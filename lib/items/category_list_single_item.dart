@@ -5,6 +5,7 @@ class GridSingleItem extends StatelessWidget {
   final String title;
   final String imgUrl;
   GridSingleItem(this.title, this.imgUrl);
+
   @override
   Widget build(BuildContext context) {
     return InkWell(

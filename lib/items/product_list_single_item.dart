@@ -6,14 +6,17 @@ class ProductSingleList extends StatelessWidget {
   final String title;
   final String imgUrl;
   ProductSingleList(this.productId, this.title, this.imgUrl);
+
+  void navigateToDetails(BuildContext context) {
+    Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => ProductFullDetails(productId)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       key: ValueKey(productId),
-      onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => ProductFullDetails(productId)));
-      },
+      onTap: () => navigateToDetails(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
